@@ -1,0 +1,19 @@
+= frpc-docker
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
+[source]
+--
+docker run -d \
+  --network host \
+  --name frpc \
+  --restart=always \
+  -v /etc/frp:/conf frpc:32.1
+--
+
+WARNING: You need to specify network as host to enable port forwarding
