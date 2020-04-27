@@ -1,4 +1,4 @@
-= frpc-docker
+= frpc-docker for ARM arch
 ifdef::env-github[]
 :tip-caption: :bulb:
 :note-caption: :information_source:
