@@ -7,6 +7,21 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
+== Usage
+
+.1° Change environment variable in Dockerfile to correct number
+[source]
+--
+ENV FRP_VERSION 0.33.0
+--
+
+.2° Build the Dockerfile by changing ${FRP_VERSION} with proper number e.g. 0.33.0
+[source]
+--
+docker build --tag frpc:${FRP_VERSION} .
+--
+
+.3° Run the new instance by changing ${FRP_VERSION} with proper number e.g. 0.33.0
 [source]
 --
 docker run -d \
