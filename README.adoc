@@ -13,7 +13,7 @@ docker run -d \
   --network host \
   --name frpc \
   --restart=always \
-  -v /etc/frp:/conf frpc:32.1
+  -v /etc/frp:/conf frpc:${FRP_VERSION}
 --
 
 WARNING: You need to specify network as host to enable port forwarding
