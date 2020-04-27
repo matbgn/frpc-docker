@@ -1,4 +1,4 @@
-= frpc-docker for ARM arch
+= Fast Reverse Proxy Client Part for ARM architecture
 ifdef::env-github[]
 :tip-caption: :bulb:
 :note-caption: :information_source:
@@ -28,7 +28,39 @@ docker run -d \
   --network host \
   --name frpc \
   --restart=always \
-  -v /etc/frp:/conf frpc:${FRP_VERSION}
+  -v /etc/frp:/conf \
+  frpc:${FRP_VERSION}
 --
 
 WARNING: You need to specify network as host to enable port forwarding
+
+== Configuration example
+
+.# sudo nano /etc/frp/frpc.ini
+[source]
+--
+[common]
+server_addr = server_ip_address
+server_port = 7000
+token = your_token_same_as_frps
+
+[ssh]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 22
+remote_port = 2222
+
+[web01]
+type = http
+local_ip = 127.0.0.1
+local_port = 81
+# custom_domains can not be repeated:
+custom_domains = awesome.example.com
+
+[web01]
+type = http
+local_ip = 127.0.0.1
+local_port = 89
+# custom_domains can not be repeated:
+custom_domains = another.example.com
+--
