@@ -44,23 +44,17 @@ server_addr = server_ip_address
 server_port = 7000
 token = your_token_same_as_frps
 
-[ssh]
-type = tcp
-local_ip = 127.0.0.1
-local_port = 22
-remote_port = 2222
-
 [web01]
 type = http
-local_ip = 127.0.0.1
-local_port = 81
+local_port = 8080
 # custom_domains can not be repeated:
 custom_domains = awesome.example.com
 
-[web01]
+[web02]
 type = http
-local_ip = 127.0.0.1
-local_port = 89
+local_port = 3000
 # custom_domains can not be repeated:
 custom_domains = another.example.com
 --
+
+WARNING: Don't forget to resolve *.example.com to the frps server's IP. This is usually called a Wildcard DNS record.
