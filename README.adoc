@@ -47,14 +47,28 @@ token = your_token_same_as_frps
 [web01]
 type = http
 local_port = 8080
-# custom_domains can not be repeated:
+# Custom domains can not be repeated:
 custom_domains = awesome.example.com
 
 [web02]
-type = http
-local_port = 3000
-# custom_domains can not be repeated:
+type = https
+# local_port = 3000
+# Custom domains can not be repeated:
 custom_domains = another.example.com
+
+# Rerouting local http server with SSL certificate
+plugin = https2http
+plugin_local_addr = 127.0.0.1:8080
+plugin_crt_path = /conf/certs/fullchain.pem
+plugin_key_path = /conf/certs/privkey.pem
+plugin_host_header_rewrite = another.example.com
+plugin_header_X-From-Where = frp
 --
 
 WARNING: Don't forget to resolve *.example.com to the frps server's IP. This is usually called a Wildcard DNS record.
+
+[NOTE] 
+--
+In order to achieve certification you have to generate a certificate (e.g. via Certbot for Webmin) and place it in following folder on local server:
+`/etc/frp/certs`
+--
