@@ -7,6 +7,11 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
+== Documentation
+
+* Base documentation: https://github.com/fatedier/frp#table-of-contents
+* Full examples: https://fossies.org/linux/frp/conf/frps_full.ini
+
 == Usage
 
 .1° Change environment variable in Dockerfile to correct number
