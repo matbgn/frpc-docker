@@ -10,7 +10,7 @@ endif::[]
 == Documentation
 
 * Base documentation: https://github.com/fatedier/frp#table-of-contents
-* Full examples: https://fossies.org/linux/frp/conf/frpc_full.ini
+* Full examples: https://github.com/fatedier/frp/blob/dev/conf/frpc_full.ini
 
 == Usage
 
